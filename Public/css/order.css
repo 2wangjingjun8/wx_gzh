@@ -1,0 +1,240 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.header>a{
+	position: absolute;
+}
+.header>a>img{
+	display: inline-block;
+	margin: 0.25rem 0 0 0.35rem;
+	width: 0.22rem;
+	height: 0.43rem;
+}
+.header>h2{
+	font-size: 0.36rem;
+	color: #fff;
+	font-weight: normal;
+	height: 0.88rem;
+	line-height: 0.88rem;
+	text-align: center;
+	border-bottom: 0.01rem solid #c1c1c1;
+	background: #114fb7;
+}
+/*地址*/
+.content>.order>div{
+	background: #fff;
+	padding: 0.25rem 0 0.25rem 0.35rem;
+}
+.content>.order>div>h3{
+	font-size: 0.24rem;
+	color: #333;
+	font-weight: normal;
+}
+.content>.order>div>p{
+	margin: 0.1rem 0 0 0.2rem;
+}
+.content>.order>div>p>i{
+	font-size: 0.22rem;
+	color: #333;
+	font-style: normal;
+}
+.content>.order>div>p>span{
+	font-size: 0.22rem;
+	color: #333;
+	display: inline-block;
+	width: 1.2rem;
+	text-align: right;
+}
+.content>.order>div>a{
+	display: inline-block;
+	width: 0.32rem;
+	height: 0.32rem;
+	line-height: 0.21rem;
+	border: 0.01rem solid #999;
+	text-align: center;
+	border-radius: 50%;
+	float: right;
+	position: relative;
+	bottom: 0.75rem;
+	right: 0.6rem;
+	font-size: 0.22rem;
+	color: #999
+}
+/*商品*/
+.content{
+	background: #f4f4f4;
+	clear: both;
+	overflow: hidden;
+	padding: 0.9rem 0 4.7rem 0;
+}
+.content>.order>ul{
+	background: #f4f4f4;
+	clear: both;
+	overflow: hidden;
+}
+.content>.order>ul>li{
+	background: #fff;
+	margin-top: 0.15rem;
+	clear: both;
+	overflow: hidden;
+	padding: 0.2rem 0;
+}
+.content>.order>ul>li>a{
+	display: inline-block;
+	width: 1.35rem;
+	height: 1.35rem;
+	line-height: 2.1rem;
+	border: 0.01rem solid #999;
+	text-align: center;
+	overflow: hidden;
+	float: left;
+	margin-left: 0.4rem;
+}
+.content>.order>ul>li>a>img{
+	width: 1.14rem;
+	height: 0.75rem;
+}
+.content>.order>ul>li>div{
+	float: left;
+	margin-left: 0.45rem;
+}
+.content>.order>ul>li>div>h2>a{
+	font-size: 0.3rem;
+	color: #333;
+	font-weight: normal;
+}
+.content>.order>ul>li>div>p{
+	margin: 0.02rem 0 0.3rem;
+	width: 3.3rem;
+}
+.content>.order>ul>li>div>p>span{
+	font-size: 0.2rem;
+	color: #333;
+}
+.content>.order>ul>li>div>p>em{
+	font-size: 0.2rem;
+	font-style: normal;
+	color: #333;
+}
+.content>.order>ul>li>div>span{
+	font-size: 0.24rem;
+	color: #333;
+}
+.content>.order>ul>li>div>em{
+	font-size: 0.26rem;
+	color: #dd2222;
+	font-style: normal;
+	margin: 0.5rem 0 0.15rem;
+	display: inline-block;
+}
+.content>.order>ul>li>div>em:nth-child(1){
+	margin-left: 0.1rem;
+}
+.content>.order>ul>li>div>b{
+	font-size: 0.2rem;
+	color: #333;
+	font-weight: normal;
+	display: block;
+}
+/*总价*/
+.content>.order>form>textarea{
+	width: 6.2rem;
+	height: 0.45rem;
+	background: #f4f4f4;
+	font-size: 0.3rem;
+	color: #999;
+	padding: 0.2rem;
+	resize: none;
+	margin: 0.2rem 0 0.1rem 0.4rem;
+	border: 0.01rem solid #114fb7;
+}
+.content>.order>form>p{
+	margin-left: 3rem;
+}
+.content>.order>form>p>span{
+	font-size: 0.24rem;
+	color: #333;
+	margin-right: 0.4rem;
+}
+.content>.order>form>p>span>em{
+	font-size: 0.32rem;
+	font-style: normal;
+	color: #dd2222;
+}
+.content>.order>form>p>i{
+	font-style: normal;
+	font-size: 0.26rem;
+	color: #dd2222;
+}
+.content>.order>form>p>i:nth-child(3){
+	margin-left: 0.35rem;
+}
+.content>.order>form>div{
+	position: fixed;
+	bottom: 0;
+	background: #f4f4f4;
+}
+.content>.order>form>div>span{
+	display: inline-block;
+	width: 4.01rem;
+	height: 0.95rem;
+	line-height: 0.95rem;
+	background: #fff;
+	font-size: 0.3rem;
+	color: #333;
+	text-align: center;
+}
+.content>.order>form>div>span>em{
+	font-size: 0.3rem;
+	color: #dd2222;
+	font-style: normal;
+}
+.content>.order>form>div>button{
+	width: 3.4rem;
+	height: 0.95rem;
+	line-height: 0.95rem;
+	background: #114fb7;
+	font-size: 0.36rem;
+	color: #fff;
+	text-align: center;
+	border: none;
+	position: relative;
+	top: 0.03rem;
+}
+
+@media screen and (min-width:320px) and (max-width:360px){
+      .content>.order>ul>li>a{
+		margin-top: 0.18rem;		
+	}
+}
+@media screen and (min-width:360px) and (max-width:420px){
+      .content>.order>ul>li>a{
+		margin-top: 0.1rem;		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,172 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content{
+	background: #f7f7f7;
+}
+/*top*/
+.content>.pro_top{
+	background: #fff;
+	clear: left;
+	overflow: hidden;
+}
+.content>.pro_top>ul{
+	padding-left: 0.25rem;
+	border-top: 0.01rem solid #999;
+}
+.content>.pro_top>ul>li{
+	float: left;
+	width: 1.4rem;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	text-align: center;
+}
+.content>.pro_top>ul>li>a{
+	font-size: 0.24rem;
+	color: #333;
+	display: block;
+}
+.content>.pro_top>ul>li>a.on{
+	color: #114fb7;
+}
+.content>.pro_top>ul>li>a>span{
+	background: url(../images/icon20.png) no-repeat;
+	background-size: 100%;
+	display: inline-block;
+	width: 0.1rem;
+	height: 0.23rem;
+	margin-left: 0.05rem;
+	position: relative;
+	top: 0.04rem;
+}
+/**/
+.header>ul{
+	position: absolute;
+	top: 0.92rem;
+	right: 0;
+	z-index: 2;
+	display: none;
+}
+.header>ul>li{
+	background: #999;
+	width: 1.5rem;
+	line-height: 0.4rem;
+	text-align: center;
+	margin-bottom: 0.02rem;
+}
+.header>ul>li>a{
+	font-size: 0.24rem;
+	color: #fff;
+	display: block;
+}
+/*pro_list*/
+.content{
+	padding:0.93rem 0 1rem 0;
+}
+.content>.pro_list>div{
+	display: none;
+	overflow: hidden;
+}
+.content>.pro_list>div:nth-child(1){
+	display: block;
+}
+.content>.pro_list>div>ul{
+	clear: both;
+	overflow: hidden;
+	margin-right: -0.2rem;
+	padding-bottom: 0.05rem;
+}
+.content>.pro_list>div>ul>li{
+	background: #fff;
+	width: 3.7rem;
+	margin-top: 0.1rem;
+	overflow: hidden;
+	padding-bottom: 0.1rem;
+	float: left;
+	margin-right: 0.1rem;
+}
+.content>.pro_list>div>ul>li>a{
+	display: inline-block;
+}
+.content>.pro_list>div>ul>li>a>img{
+	display: inline-block;
+	width: 2.7rem;
+	height: 2.85rem;
+	margin: 0.3rem 0.5rem 0;
+}
+.content>.pro_list>div>ul>li>h4>a{
+	font-size: 0.24rem;
+	color: #333;
+	font-weight: normal;
+	margin-left: 0.3rem;
+}
+.content>.pro_list>div>ul>li>h5>a{
+	font-size: 0.24rem;
+	color: #666;
+	font-weight: normal;
+	margin-left: 0.3rem;
+}
+.content>.pro_list>div>ul>li>h6>a{
+	font-size: 0.22rem;
+	color: #666;
+	font-weight: normal;
+	margin: 10px 0 0 0.3rem;;
+	display: inline-block;
+}
+.content>.pro_list>div>ul>li>span{
+	display: block;
+	margin-left: 0.25rem;
+}
+.content>.pro_list>div>ul>li>span>em{
+	font-style: normal;
+	font-size: 0.3rem;
+	color: #dd2222;
+	font-weight: bold;
+}
+.content>.pro_list>div>ul>li>span>i{
+	font-style: normal;
+	font-size: 0.3rem;
+	color: #dd2222;
+	font-weight: bold;
+}
+.content>.pro_list>div>ul>li>span>b{
+	font-weight: normal;
+	text-align: center;
+	font-size: 0.24rem;
+	color: #999;
+	text-decoration:line-through;
+	margin-left: 0.2rem;
+}
+.content>.pro_list>div>ul>li>p{
+	font-size: 0.24rem;
+	color: #666;
+	margin-left: 0.3rem;
+	float: left;
+}
+.content>.pro_list>div>ul>li>a:last-child{
+	background: url(../images/icon21.png) no-repeat;
+	background-size: 100%;
+	display: inline-block;
+	width: 0.38rem;
+	height: 0.33rem;
+	float: right;
+	margin-right: 0.15rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

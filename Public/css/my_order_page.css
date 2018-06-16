@@ -1,0 +1,180 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.header>a{
+	position: absolute;
+}
+.header>a>img{
+	display: inline-block;
+	margin: 0.25rem 0 0 0.35rem;
+	width: 0.22rem;
+	height: 0.43rem;
+}
+.header>h2{
+	font-size: 0.36rem;
+	color: #fff;
+	font-weight: normal;
+	height: 0.88rem;
+	line-height: 0.88rem;
+	text-align: center;
+	border-bottom: 0.01rem solid #c1c1c1;
+	background: #114fb7;
+}
+/*centent*/
+.content{
+	background: #f4f4f4;
+	padding-bottom: 5.2rem;
+	padding-top: 0.9rem;
+}
+.content>.order_nav{
+	margin-bottom: 0.12rem;
+}
+.content>.order_nav>ul{
+	background: #fff;
+	clear: both;
+	overflow: hidden;
+}
+.content>.order_nav>ul>li{
+	float: left;
+	margin-right: 0.5rem;
+}
+.content>.order_nav>ul>li>a{
+	display: block;
+	font-size: 0.24rem;
+	color: #333;
+	padding: 0.28rem 0;
+}
+.content>.order_nav>ul>li:nth-child(1){
+	margin-left: 0.6rem;
+}
+.content>.order_nav>ul>li>a.on{
+	color: #114fb7;
+}
+.content>.order_nav>ul>li>a>span{
+	font-size: 0.24rem;
+	color: #dd2222;
+}
+/*my_order*/
+.content>.my_order>ul{
+	background: #f4f4f4;
+}
+.content>.my_order>ul>li{
+	margin-bottom: 0.15rem;
+}
+.content>.my_order>ul>li>p{
+	font-size: 0.2rem;
+	color: #333;
+	line-height: 0.4rem;
+	background: #fff;
+	padding-left: 0.25rem;
+}
+.content>.my_order>ul>li>p>em{
+	font-size: 0.2rem;
+	color: #333;
+	font-style: normal;
+}
+.content>.my_order>ul>li>p>span{
+	background: url(../images/my_order.png) no-repeat;
+	background-size: 100%;
+	width: 0.25rem;
+	height: 0.25rem;
+	display: inline-block;
+	float: right;
+	margin: 0.08rem 0.25rem 0 0;
+}
+.content>.my_order>ul>li>div{
+	background: #fff;
+	clear: both;
+	overflow: hidden;
+	padding: 0.2rem 0;
+	margin: 0.02rem 0;
+}
+.content>.my_order>ul>li>div>a{
+	width: 1.35rem;
+	height: 1.35rem;
+	line-height: 2.1rem;
+	display: inline-block;
+	border: 0.01rem solid #cecece;
+	margin-left: 0.32rem;
+	float: left;
+}
+.content>.my_order>ul>li>div>a>img{
+	width: 1.14rem;
+	height: 0.75rem;
+}
+.content>.my_order>ul>li>div>div{
+	float: left;
+	margin-left: 0.5rem;
+}
+.content>.my_order>ul>li>div>div>h2>a{
+	font-size: 0.3rem;
+	color: #333;
+	font-weight: normal;
+}
+.content>.my_order>ul>li>div>div>p{
+	margin: 0.02rem 0 0.3rem;
+	width: 3.3rem;
+}
+.content>.my_order>ul>li>div>div>p>span{
+	font-size: 0.2rem;
+	color: #333;
+}
+.content>.my_order>ul>li>div>div>p>em{
+	font-size: 0.2rem;
+	color: #333;
+	font-style: normal;
+}
+.content>.my_order>ul>li>div>div>span{
+	font-size: 0.24rem;
+	color: #333;
+}
+.content>.my_order>ul>li>div>div:nth-child(3){
+	margin-left: 0.9rem;
+}
+.content>.my_order>ul>li>div>div>b{
+	display: block;
+	font-weight: normal;
+	font-size: 0.24rem;
+	color: #333;
+	margin: 0.4rem 0 0.15rem 0.15rem;
+}
+.content>.my_order>ul>li>div>div>em{
+	font-size: 0.26rem;
+	color: #dd2222;
+	font-style: normal;
+}
+.content>.my_order>ul>li>span{
+	display: block;
+	background: #fff;
+	clear: both;
+	overflow: hidden;
+	padding: 0.1rem 0;
+}
+.content>.my_order>ul>li>span>a{
+	display: inline-block;
+	line-height: 0.35rem;
+	font-size: 0.2rem;
+	color: #3372db;
+	text-align: center;
+	border: 0.01rem solid #3372db;
+	border-radius: 0.08rem;
+	padding: 0 0.2rem;
+	margin-right: 0.15rem;
+	float: right;
+}
+
+@media screen and (min-width:320px) and (max-width:360px){
+      .content>.my_order>ul>li>div>a{
+		margin-top: 0.18rem;		
+	}
+}
+@media screen and (min-width:360px) and (max-width:420px){
+      .content>.my_order>ul>li>div>a{
+		margin-top: 0.1rem;		
+	}
+}
+
+
+

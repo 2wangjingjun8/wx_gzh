@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$title}</title>
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css"/>
+	<link rel="stylesheet" href="__PUBLIC__/css/shop_cart.css"/>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+	<scrip"text/javascript" src="__PUBLIC__/js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+<body onload="loadCar()">
+	<!--头部-->
+	<header class="header">
+		<a href="javascript:window.history.back()"><img src="__PUBLIC__/images/icon25.png" alt="icon"></a>
+		<h2>购物车</h2>
+	</header>
+	<!--头部 end-->
+	<!--中间内容部分-->
+	<article class="content">
+		<!--购物车-->
+		<section class="shop_cart">
+			<ul id="carUl">
+				
+			</ul>
+			<div>
+				<label for="all"><input type="checkbox" id="all"><label for="all"></label><span>全选</span></label>
+				<span>总价：<em>¥</em><em id="sum">230</em></span>
+				<a href="javascript:void(0);" onclick="goLoad()">去结算</a>
+			</div>
+		</section>
+		<!--购物车 end-->
+	</article>
+	<!--中间内容部分 end-->
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/shop_cart.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/shopcar.js"></script>
+	<include file="Public/footer" />

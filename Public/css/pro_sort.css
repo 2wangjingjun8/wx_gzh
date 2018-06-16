@@ -1,0 +1,219 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*navbar*/
+.header>ul{
+	position: absolute;
+	top: 0.92rem;
+	right: 0;
+	z-index: 2;
+	display: none;
+}
+.header>ul>li{
+	background: #999;
+	width: 1.5rem;
+	line-height: 0.4rem;
+	text-align: center;
+	margin-bottom: 0.02rem;
+}
+.header>ul>li>a{
+	font-size: 0.24rem;
+	color: #fff;
+	display: block;
+}
+/*content 主体样式*/
+/*左侧*/
+.content{
+	background: #f7f7f7;
+	clear: both;
+	overflow: hidden;
+	padding:0.93rem 0 1rem 0;
+}
+.content>.con_nav{
+	float: left;
+}
+.content>.con_nav>h2{
+	font-size: 0.24rem;
+	color: #fff;
+	background: #114fb7;
+	line-height: 0.55rem;
+	width: 2.15rem;
+	text-align: center;
+	font-weight: normal;
+}
+/*.content>.con_nav>ul{
+	border-right: 0.01rem solid #c8c8c8;
+}*/
+.content>.con_nav>ul>li{
+	text-align: left;
+	margin-left: 0.2rem;
+}
+.content>.con_nav>ul>li>a{
+	font-size: 0.2rem;
+	color: #333;
+	width: 1.3rem;
+	line-height: 0.7rem;
+	display: inline-block;
+	border-bottom: 0.01rem solid #999;
+	padding-left: 0.45rem;
+}
+.content>.con_nav>ul>li:last-child>a{
+	border-bottom: none;
+}
+.content>.con_nav>ul>li>a.on{
+	color: #114fb7;
+}
+/*右侧*/
+.content>.pro_sort{
+	border-left: 0.01rem solid #c8c8c8;
+	float: left;
+	margin-left: -0.01rem;
+}
+.content>.pro_sort>.top{
+	background: url(../images/picture.jpg) no-repeat;
+	background-size: 100%;
+	width: 5.1rem;
+	display: inline-block;
+	padding-top: 0.1rem;
+	margin-left: 0.15rem;
+}
+.content>.pro_sort>.top>a{
+	display: inline-block;
+	float: left;
+	margin: 0.1rem 0 0 0.5rem;
+}
+.content>.pro_sort>.top>a>img{
+	width: 1rem;
+	height: 1.5rem;
+	display: inline-block;
+}
+.content>.pro_sort>.top>div{
+	float: right;
+	text-align: right;
+	margin-right: 0.1rem;
+	width: 3.5rem;
+}
+.content>.pro_sort>.top>div>h6>a{
+	font-size: 0.22rem;
+	color: #fff;
+	font-weight: normal;
+	display: inline-block;
+	margin: 0.1rem 0 0.03rem 0;
+}
+.content>.pro_sort>.top>div>h5>a{
+	font-size: 0.24rem;
+	color: #fff;
+	font-weight: normal;
+}
+.content>.pro_sort>.top>div>p>a{
+	font-size: 0.14rem;
+	color: #b9cced;
+	font-weight: normal;
+	display: inline-block;
+	margin: 0.05rem 0;
+}
+.content>.pro_sort>.top>div>h4>a{
+	font-size: 0.18rem;
+	color: #fff;
+	font-weight: normal;
+}
+.content>.pro_sort>.top>div>a{
+	font-size: 0.2rem;
+	color: #fff;
+	border: 0.01rem solid #fff;
+	width: 1.2rem;
+	height: 0.35rem;
+	line-height: 0.35rem;
+	display: inline-block;
+	text-align: center;
+	margin: 0.05rem 0 0.2rem 0;
+}
+.content>.pro_sort>.bottom>div{
+	display: none;
+}
+.content>.pro_sort>.bottom>div:nth-child(1){
+	display: block;
+}
+.content>.pro_sort>.bottom>div>ul{
+	margin: 0.05rem 0 0 0.13rem;
+	display: inline-block;
+	width: 5.2rem;
+	padding-bottom: 0.1rem;
+}
+.content>.pro_sort>.bottom>div>ul>li{
+	width: 2.5rem;
+	background: #fff;
+	text-align: center;
+	border-radius: 0.08rem;
+	padding-top: 0.2rem;
+	margin-top: 0.1rem;
+	float: left;
+	margin-right: 0.1rem;
+}
+.content>.pro_sort>.bottom>div>ul>li>a{
+	display: inline-block;
+	margin-bottom: 0.05rem;
+}
+.content>.pro_sort>.bottom>div>ul>li>a>img{
+	display: inline-block;
+	width: 1.3rem;
+	height: 1.5rem;
+}
+.content>.pro_sort>.bottom>div>ul>li>a:last-child{
+	display: block;
+	background: #114fb7;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	font-size: 0.2rem;
+	color: #fff;
+	border-bottom-right-radius: 0.08rem;
+	border-bottom-left-radius: 0.08rem;
+	margin-bottom: 0;
+}
+
+
+@media screen and (max-width:450px){
+      .content>.pro_sort>.top{
+		background-size: 125%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

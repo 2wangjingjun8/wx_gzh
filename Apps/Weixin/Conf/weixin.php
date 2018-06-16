@@ -4,7 +4,7 @@ return array(
 	'TOKEN'=>'wangjingjun',
 	'appid'=>'wxeb69dcc420d95b6b',//wxe917ffe5098a8e4f
 	'secret'=>'212f044fcdd1a399b2c4209ecf42c6ab',//0b8e9effc192e686a2703804555ff4a0
-	//公众号菜单配置
+	//公众号菜单配置,翻译控制器translate
            'MENU'     =>   '{
 		           "button":[
 			          	{
@@ -24,11 +24,15 @@ return array(
 							"type":"click",
 							"name":"翻译查询",
 							"key":"翻译"
+						},
+						{	"type":"view",
+							"name":"转视频链接",
+							"url":"http://www.ice20.top/weixin2/Wechat.php/product/homepage"
 						}
 			          		]
 			          	},
 			          	{
-			          		"name":"山灵会员",
+			          		"name":"山灵商城",
 			          		"sub_button":[
 						{
 							"type":"view",
@@ -58,7 +62,7 @@ return array(
 						{
 							"type":"view",
 							"name":"会员中心",
-							"url":"http://www.ice20.top/weixin2/Wechat.php/index/homepage"
+							"url":"http://www.ice20.top/weixin2/Wechat.php/user/membercenter"
 						},
 						{
 							"type":"view",

@@ -1,0 +1,221 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.header>a{
+	position: absolute;
+}
+.header>a>img{
+	display: inline-block;
+	margin: 0.25rem 0 0 0.35rem;
+	width: 0.22rem;
+	height: 0.43rem;
+}
+.header>h2{
+	font-size: 0.36rem;
+	color: #fff;
+	font-weight: normal;
+	height: 0.88rem;
+	line-height: 0.88rem;
+	text-align: center;
+	border-bottom: 0.01rem solid #c1c1c1;
+	background: #114fb7;
+}
+/*订单消息*/
+.content{
+	background: #f4f4f4;
+	clear: both;
+	overflow: hidden;
+	padding-top: 0.9rem;
+}
+.content>.pay{
+	background: #fff;
+	padding-bottom: 6rem;
+}
+.content>.pay>.news{
+	background: #fff;
+	padding: 0.2rem 0 0.25rem 0.35rem;
+	margin: 0.15rem 0 0.25rem 0;
+}
+.content>.pay>.news>h3{
+	font-size: 0.3rem;
+	color: #333;
+	font-weight: normal;
+}
+.content>.pay>.news>p{
+	margin: 0.1rem 0 0 0.2rem;
+}
+.content>.pay>.news>p>em{
+	font-size: 0.3rem;
+	color: #dd2222;
+	font-style: normal;
+}
+.content>.pay>.news>p>i{
+	font-size: 0.22rem;
+	color: #333;
+	font-style: normal;
+}
+.content>.pay>.news>p>span{
+	font-size: 0.22rem;
+	color: #333;
+	display: inline-block;
+	width: 1.5rem;
+	text-align: right;
+	margin-right: 0.15rem;
+}
+/*支付方式*/
+.content>.pay>.way{
+	background: #fff;
+
+}
+.content>.pay>.way>h3{
+	font-size: 0.3rem;
+	color: #333;
+	font-weight: normal;
+	background: #fff;
+	line-height: 0.6rem;
+	padding-left: 0.35rem;
+}
+.content>.pay>.way>ul{
+	background: #f4f4f4;
+	padding: 0.04rem 0 0.01rem;
+}
+.content>.pay>.way>ul>li{
+	background: #fff;
+	line-height: 0.6rem;
+	margin-bottom: 0.03rem;
+}
+.content>.pay>.way>ul>li>img{
+	width: 0.43rem;
+	height: 0.43rem;
+	float: left;
+	margin: 0.1rem 0.15rem 0 0.45rem;
+}
+.content>.pay>.way>ul>li>span{
+	font-size: 0.24rem;
+	color: #333;
+	display: inline-block;
+}
+.content>.pay>.way>ul>li>em{
+	background: url(../images/icon30.png) no-repeat;
+	background-size: 100%;
+	display: inline-block;
+	width: 0.35rem;
+	height: 0.35rem;
+	float: right;
+	margin: 0.14rem 0.35rem 0 0 ;
+}
+.content>.pay>.way>ul>li>em.on{
+	background: url(../images/icon30_1.png) no-repeat;
+	background-size: 100%;
+	display: inline-block;
+	width: 0.4rem;
+	height: 0.4rem;
+	margin: 0.14rem 0.3rem 0 0 ;
+}
+.content>.pay>.way>div>span{
+	display: inline-block;
+	width: 2.2rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	background: #f4f4f4;
+	text-align: center;
+	border-radius: 0.15rem;
+	margin: 0.3rem 0 0 0.4rem;
+	font-size: 0.24rem;
+	color: #333;
+	font-style: normal;
+}
+.content>.pay>.way>div>span>em{
+	background: url(../images/icon31.png) no-repeat;
+	background-size: 100%;
+	width: 0.24rem;
+	height: 0.14rem;
+	display: inline-block;
+	margin-right: 0.05rem;
+}
+.content>.pay>.way>div>span>em.on{
+	transform: rotate(180deg);
+}
+/*下拉列表*/
+.content>.pay>.way>div{
+	position: relative;
+}
+.content>.pay>.way>div>ul{
+	background: #f4f4f4;
+	padding: 0.04rem 0 0.01rem;
+	position: absolute;
+	top: 0.8rem;
+	display: none;
+	margin-top: 0.1rem;
+}
+.content>.pay>.way>div>ul>li{
+	background: #fff;
+	line-height: 0.6rem;
+	margin-bottom: 0.03rem;
+	width: 7.5rem;
+}
+.content>.pay>.way>div>ul>li>img{
+	width: 0.43rem;
+	height: 0.43rem;
+	float: left;
+	margin: 0.1rem 0.15rem 0 0.45rem;
+}
+.content>.pay>.way>div>ul>li>span{
+	font-size: 0.24rem;
+	color: #333;
+	display: inline-block;
+}
+.content>.pay>.way>div>ul>li>em{
+	background: url(../images/icon30.png) no-repeat;
+	background-size: 100%;
+	display: inline-block;
+	width: 0.35rem;
+	height: 0.35rem;
+	float: right;
+	margin: 0.18rem 0.35rem 0 0 ;
+}
+.content>.pay>.way>div>ul>li>em.on{
+	background: url(../images/icon30_1.png) no-repeat;
+	background-size: 100%;
+	width: 0.4rem;
+	height: 0.4rem;
+	margin: 0.14rem 0.3rem 0 0 ;
+}
+.content>.pay>.way>a{
+	width: 7.5rem;
+	line-height: 1rem;
+	font-size: 0.36rem;
+	color: #fff;
+	background: #114fb7;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

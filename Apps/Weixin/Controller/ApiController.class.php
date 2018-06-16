@@ -30,4 +30,11 @@ class ApiController extends CommonController
 		}
 		return $reply_content;
 	}
+
+	//翻译接口查询
+	public function translate()
+	{
+		$this->assign("title","百度翻译");
+		$this->display();
+	}
 }

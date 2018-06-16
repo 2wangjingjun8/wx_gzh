@@ -26,4 +26,8 @@ class UserController extends CommonController
 		$userinfo.='住址：'.$data['province'].$data['city'].'';
 		return $userinfo;
 	}
+	public function membercenter()
+	{
+		$this->display('User:membercenter');
+	}
 }

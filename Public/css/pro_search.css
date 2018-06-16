@@ -1,0 +1,117 @@
+@charset "utf-8";
+/* CSS Document */
+
+.header>span{
+	font-size: 0.3rem;
+	color: #333;
+	margin: 0.25rem 0 0 0.2rem; 
+	display: inline-block;
+}
+/*热点搜索*/
+.content{
+	background: #f6f6f6;
+	clear: both;
+	overflow: hidden;
+	margin-top: 0.92rem;
+}
+.content>.hot{
+	background: #fff;
+	margin: 0.25rem 0;
+	padding-bottom: 0.1rem;
+}
+.content>.hot>h2{
+	font-size: 0.24rem;
+	color: #333;
+	font-weight: normal;
+	display: inline-block;
+	margin: 0.2rem 0 0.45rem 0.4rem;
+}
+.content>.hot>ul{
+	margin-left: 0.7rem;
+	display: inline-block;
+}
+.content>.hot>ul>li{
+	float: left;
+	line-height: 0.4rem;
+	background: #f6f6f6;
+	text-align: center;
+	margin-right: 0.17rem;
+	margin-bottom: 0.2rem;
+	border-radius: 0.15rem;
+}
+.content>.hot>ul>li>a{
+	font-size: 0.22rem;
+	color: #666;
+	padding: 0 0.15rem;
+}
+/*您的足迹*/
+.content>.footprint>h2{
+	font-size: 0.24rem;
+	color: #333;
+	line-height: 0.62rem;
+	font-weight: normal;
+	background: #fff;
+	padding-left: 0.4rem;
+	margin-bottom: 0.03rem;
+}
+.content>.footprint>ul>li{
+	background: #fff;
+	padding-left: 0.4rem;
+	line-height: 0.55rem;
+	margin-bottom: 0.03rem;
+}
+.content>.footprint>ul>li>a{
+	display: block;
+	font-size: 0.2rem;
+	color: #666;
+}
+.content>.footprint>div{
+	background: #fff;
+	text-align: center;
+	padding-bottom: 6rem;
+}
+.content>.footprint>div>span{
+	background: #f6f6f6;
+	font-size: 0.24rem;
+	display: inline-block;
+	line-height: 0.6rem;
+	padding: 0 0.4rem;
+	border-radius: 0.15rem;
+	margin-top: 0.48rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

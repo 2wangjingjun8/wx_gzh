@@ -15,7 +15,7 @@ class EventController extends CommonController
 		if($this->MsgType == 'event'){
 			if($this->arr_xml['Event'] == 'subscribe'){
 				//回复关注消息的欢迎语
-				$this->message->to_select_reply('欢迎您的关注');
+				$this->message->to_select_reply('欢迎关注王静俊的公众号');
 			}elseif($this->arr_xml['Event'] == 'SCAN'){
 				$EventKey = $this->arr_xml['EventKey'];
 				//回复扫码关注消息的欢迎语

@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.header>a{
+	position: absolute;
+}
+.header>a>img{
+	display: inline-block;
+	margin: 0.25rem 0 0 0.35rem;
+	width: 0.22rem;
+	height: 0.43rem;
+}
+.header>h2{
+	font-size: 0.36rem;
+	color: #fff;
+	font-weight: normal;
+	height: 0.88rem;
+	line-height: 0.88rem;
+	text-align: center;
+	border-bottom: 0.01rem solid #c1c1c1;
+	background: #114fb7;
+}
+/*注册*/
+.content{
+	background: #fff;
+	padding-top: 0.9rem;
+}
+.content>.login{
+	position: relative;
+}
+.content>.login>div{
+	text-align: center;
+}
+.content>.login>div>img{
+	width: 2.25rem;
+	margin-top: 0.85rem;
+}
+.content>.login>div>p{
+	font-size: 0.22rem;
+	color: #666;
+	margin-top: 0.25rem;
+}
+.content>.login>div>p>a{
+	font-size: 0.3rem;
+	color: #114fb7;
+}
+.content>.login>form{
+	margin: 0.7rem 0 0 0.68rem;
+	padding-bottom: 4.3rem;
+}
+.content>.login>form>label{
+	display: block;
+	margin-top: 0.35rem;
+	position: relative;
+}
+.content>.login>form>p{
+	font-size: 0.2rem;
+	margin-left: 1.3rem;
+	color: red;
+	display: none;
+}
+.content>.login>form>label>span{
+	width: 1.25rem;
+	display: inline-block;
+	font-size: 0.3rem;
+	color: #333;
+	text-align: right;
+}
+.content>.login>form>label>input{
+	width: 4.25rem;
+	height: 0.58rem;
+	border: 0.01rem solid #333;
+	padding: 0 0.1rem;
+}
+.content>.login>form>button{
+	font-size: 0.36rem;
+	color: #fff;
+	background: #114fb7;
+	width: 3.1rem;
+	line-height: 0.7rem;
+	border: none;
+	margin: 0.4rem 0 0 1.65rem;
+	position: relative;
+	z-index: 1;
+}
+.content>.login>form>a{
+	display: block;
+	font-size: 0.22rem;
+	margin-left: 3.7rem;
+	position: relative;
+	z-index: 1;
+}
+.content>.login>img{
+	position: absolute;
+	bottom: 0;
+	width: 7.5rem;
+	height: 5.05rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

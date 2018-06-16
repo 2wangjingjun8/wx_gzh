@@ -12,6 +12,7 @@ class IndexController extends CommonController {
  		$this->api = A('Api');//实例化api控制器
  		$this->user = A('User');//实例化用户中心控制器
  		$this->oauth = A('Oauth');//实例化网页授权控制器
+ 		$this->product = A('Product');//实例化商品列表控制器
 	}
  	public function index(){
 	    	if(I('echostr')){
@@ -90,9 +91,6 @@ class IndexController extends CommonController {
  	//获取用户信息
  	public function get_userinfo()
  	{
-		// $redirect_uri = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-
-		// echo $redirect_uri;exit;
  		$userinfo = $this->oauth->wx_login();
  		dump($userinfo);exit;
  	}
