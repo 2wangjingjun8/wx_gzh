@@ -1,0 +1,59 @@
+<include file="Public/sort_list_header" />
+	<link rel="stylesheet" href="__PUBLIC__/css/pro_list.css"/>
+	<script type="text/javascript" src="__PUBLIC__/js/style.js"></script>
+
+	<!--中间内容部分-->
+	<article class="content">
+		<!--top-->
+		<section class="pro_top">
+			<ul>
+				<li><a href="javascript:void(0);" class="on">默认</a></li>
+				<li><a href="javascript:void(0);">销售</a></li>
+				<li><a href="javascript:void(0);">价格<span></span></a></li>
+				<li><a href="javascript:void(0);">好评</a></li>
+				<li><a href="javascript:void(0);">品牌</a></li>
+			</ul>
+		</section>
+		<!--top end-->
+		<!--pro_list-->
+		<section class="pro_list">
+			<div>
+				<ul>
+					<volist name='pro_list' id='v'>
+					<li>
+						<a href="http://www.ice20.top/weixin2/product/pro_details?id={$v.id}"><img src="http://www.ice20.top/weixin2/{$v.pro_photo}" alt="img"></a>
+						<h4><a href="http://www.ice20.top/weixin2/product/pro_details?id={$v.id}">{$v.pro_name}</a></h4>
+						<h5><a href="http://www.ice20.top/weixin2/product/pro_details?id={$v.id}">环绕音乐，极致享受</a></h5>
+						<h6><a href="http://www.ice20.top/weixin2/product/pro_details?id={$v.id}">{$v.description}</a></h6>
+						<span><em>￥</em><i>{$v.shop_price}</i><b>￥{$v.market_price}</b></span>
+						<p>好评人数：5146</p>
+						<a href="javascript:void(0);" class="add_cart" iddata="{$v.id}"></a>
+					</li>
+					</volist>
+
+				</ul>
+			</div>
+		</section>
+		<!--pro_list end-->
+	</article>
+	<!--中间内容部分 end-->
+
+	<include file="Public/footer" />
+	<script type="text/javascript" src="__PUBLIC__/js/pro_list.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/shopcar.js"></script>
+	<script>
+	$(function(){
+		//商品列表页，ajax加入购物车
+		$('.add_cart').click(function(){
+			var proid = $(this).attr('iddata');
+			$.get("{:U('Cart/add_cart')}",{proid:proid},function(res){
+				if(res.errcode ==100){
+					alert(res.errmsg);
+					location.href="{:U('User/login')}"
+				}else if(res.errcode ==0){
+					alert(res.errmsg);
+				}
+			},"json")
+		})
+	})
+	</script>

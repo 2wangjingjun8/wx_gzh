@@ -14,6 +14,7 @@ class IndexController extends CommonController {
  		$this->oauth = A('Oauth');//实例化网页授权控制器
  		$this->product = A('Product');//实例化商品列表控制器
 	}
+
  	public function index(){
 	    	if(I('echostr')){
 	    		$this->checkSignature();
@@ -21,14 +22,13 @@ class IndexController extends CommonController {
 	    	}
 	            //保存微信服务器推送给我们服务器的数据
 	    	$str_xml = file_get_contents("php://input");
-	    	/*$str_xml = "<xml><ToUserName><![CDATA[gh_b2a9c5cf5d14]]></ToUserName>
+	    	$str_xml = "<xml><ToUserName><![CDATA[gh_b2a9c5cf5d14]]></ToUserName>
 <FromUserName><![CDATA[ouGpi0R2lQ3_HVuauJr_uJMSwxPM]]></FromUserName>
-<CreateTime>1528939762</CreateTime>
+<CreateTime>1529495621</CreateTime>
 <MsgType><![CDATA[event]]></MsgType>
-<Event><![CDATA[VIEW]]></Event>
-<EventKey><![CDATA[http://www.ice20.top/weixin2/Wechat.php/index/get_userinfo]]></EventKey>
-<MenuId>474063127</MenuId>
-</xml>";*/
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[sign]]></EventKey>
+</xml>";
 	    	 //保存微信服务器推送给我们服务器的数据
 		if(!empty($str_xml)){
 			//保存微信服务器推送给我们服务器的数据
@@ -68,6 +68,7 @@ class IndexController extends CommonController {
 		if($this->MsgType == 'text'){
 			$msg = $this->Content;
 			$this->message->to_select_reply($msg,'text');
+			
 		}
 
 		//接受的是图片类型消息
@@ -85,7 +86,7 @@ class IndexController extends CommonController {
 		//调用生成微信公众号二维码
 		//dump($this->get_code());exit;
 		// dump($this->get_server_ip());exit;
-		// dump($this->oauth);exit;
+		dump($this->oauth->wx_login());exit;
  	}
 
  	//获取用户信息

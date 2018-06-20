@@ -8,6 +8,14 @@ use Think\Controller;
 */
 class UserController extends CommonController
 {
+	//用户签到
+	public function sign()
+	{
+		$user = M('sign_in');
+		$userinfo = session('userinfo');
+		dump($userinfo);exit;
+
+	}
 	public function get_userinfo()
 	{
 		$api_url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=".S('access_token')."&openid=".$this->user_id."&lang=zh_CN";

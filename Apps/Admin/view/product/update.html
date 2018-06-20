@@ -1,0 +1,89 @@
+{include file="public/header" /}
+<!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">产品中心</h1>
+
+                    </div>
+            </div>
+                <!-- /. ROW  -->
+			 <form role="form" action="" method="post" enctype="multipart/form-data" />
+				<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+						      <div class="panel panel-info">
+									<div class="panel-heading">
+									   {$title}
+									</div>
+									<div class="panel-body">
+										<input type="hidden" name="id" value="{$rs.id}"/>
+										<input type="hidden" name="a_photo_detail" value="{$a_photo_detail}"/>
+										    {:inputTag("产品名称","pro_name",$rs.pro_name)}
+										    {:inputTag("本店价","shop_price",$rs.shop_price)}
+										    {:inputTag("市场价","market_price",$rs.market_price)}
+										    {:inputTag("优惠价","recommand_price",$rs.recommand_price)}
+										    {:inputTag("优惠开始时间","recommand_start",$rs.recommand_start)}
+										    {:inputTag("优惠结束时间","recommand_end",$rs.recommand_end)}
+											{:textareaTag("商品简介","description",$rs.description)}
+											{:radioTag('上架状态:','gtype',$gtype,$rs.gtype)}
+											{:radioTag('是否新品:','is_new',$is_true,$rs.is_new)}
+											{:radioTag('是否精品:','is_good',$is_true,$rs.is_good)}
+											{:radioTag('是否热品:','is_hot',$is_true,$rs.is_hot)}  
+											{:checkboxTag('快递方式','explist[]',$expList,$rs.explist)}
+											{:textareaTag('商品内容','content',$rs.content)}
+									</div>
+							   </div>
+						 </div>
+			
+						<div class="col-md-6 col-sm-6 col-xs-12">
+						      <div class="panel panel-info">
+									<div class="panel-heading">
+									   {$title}
+									</div>
+									<div class="panel-body">
+											{:uploadTag('产品图片','pro_photo',$rs.pro_photo)}
+											{volist name='picDetail' key='k' id='v'}
+												{:uploadTag('细节图'.$k,'photo_detail[]',$v)}
+											{/volist}
+											{:brandSelect($rs.brand_id)}
+									</div>
+							   </div>
+						 </div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+						      <div class="panel panel-info">
+									<div class="panel-heading">
+											请填写产品属性
+									</div>
+									<div class="panel-body">
+											{:categorySelect("product",$rs.catid)}	
+											<div id="attrArea">
+												
+										      <p>单选输入：请用;号分隔每一个单选的值</p>
+											  {volist name="attr" key="k" id="v"}
+											       {eq name="v.attrtype" value="1"}
+												       {:inputTag($v.attrname,'attr['.$v.id.']',$v.attrval)}
+												   {/eq}
+											  {/volist}
+											  <p>固定输入</p>
+											  {volist name="attr" key="k" id="v"}
+											       {eq name="v.attrtype" value="0"}
+												       {:inputTag($v.attrname,'attr['.$v.id.']',$v.attrval)}
+												   {/eq}
+											  {/volist}		
+											</div>
+											
+									</div>
+							   </div>
+						 </div>
+						 <button type="submit" class="btn btn-info">更新产品 </button>
+			
+			     </div>
+				</form>
+           </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{include file="public/footer" /}

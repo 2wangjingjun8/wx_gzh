@@ -18,6 +18,7 @@ class MenuController extends CommonController
 	{
 		$this->get_access_token();
 		$api_url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".S('access_token');
+		// dump($api_url);exit;
 		$json_menu =C('MENU');
 
 		 // $arr_menu = json_decode($json_menu,true);

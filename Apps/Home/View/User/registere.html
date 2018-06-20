@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>用户注册</title>
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css"/>
+	<link rel="stylesheet" href="__PUBLIC__/css/registere.css"/>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<!-- <script type="text/javascript" src="__PUBLIC__/js/registere.js"></script> -->
+</head>
+<body>
+	<!--头部-->
+	<header class="header">
+		<a href="javascript:window.history.back()"><img src="__PUBLIC__/images/icon25.png" alt="icon"></a>
+		<h2>注册</h2>
+	</header>
+	<!--头部 end-->
+	<!--中间内容部分-->
+	<article class="content">
+		<!--注册页面-->
+		<section class="registere">
+			<div>
+				<img src="__PUBLIC__/images/app.jpg" alt="jpg">
+				<p>已有账号？返回<a href="{:U('login')}">登录</a></p>
+			</div>
+			<form action="login.html" class="fr-re">
+				<label for="#">
+					<span>会员名：</span><input type="text" name="name" id="user">
+				</label>
+				<p class="user_tip">不能以数字开头，长度为8到16个字符</p>
+				<label for="#">
+					<span>密&nbsp;&nbsp;&nbsp;码：</span><input type="password" name="password" id="pasw">
+				</label>
+				<p class="pasw_tip">长度为6到18个字符</p>
+				<label for="#">
+					<span>验证码：</span><input type="text" id="authCode">
+					<a href="###" id="huan" class="code">AY9K</a>
+					<b class="kan">看不清<br>换一张？</b>
+				</label>
+				<p class="auth_tip">请输入验证码</p>
+				<label for="checkbox"><input type="checkbox" id="checkbox"><span id="img"></span><em>我已阅读并同意该协议</em></label>
+				<p id="agreement_tip">请阅读并同意协议</p>
+				<button id="btn_reg">同意注册</button>
+			</form>
+			<img src="__PUBLIC__/images/registere.png" alt="registere">
+		</section>
+		<!--注册页面 end-->
+	</article>
+	<!--中间内容部分 end-->
+	<script>
+	$(function(){
+		var name = $('#user').val();
+		var password = $('#pasw').val();
+		$('#btn_reg').click(function({
+			$.post("{:U('registere')}",{name:name,password:password},function(data){
+				alert(data);
+			})
+		}))
+	})
+	</script>
+</body>
+</html>

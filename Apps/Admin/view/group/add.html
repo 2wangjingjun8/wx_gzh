@@ -1,0 +1,65 @@
+{include file="public/header" /}
+<!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">{$name}</h1>
+
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+				<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+						      <div class="panel panel-info">
+									<div class="panel-heading">
+									   {$title}
+									</div>
+									<div class="panel-body">
+										<form role="form" action="" method="post">
+											{:inputTag("组别名","namestr")}
+											
+											<div class="form-group">
+												<label>组别权限</label>
+	                                      <ul>
+										          {volist name='rs' id='v' key='k'}
+												   {eq name='$v.pid' value='0'}
+										           <li>
+												       <p>{$v.namestr}</p>
+												       <p>
+													     {volist name='rs' id='v1' key=k1''}
+														    {eq name='$v1.pid' value='$v.id'}
+													       <input type="checkbox" name="rulestr[]" value="{$v1.id}">{$v1.namestr}&nbsp;&nbsp;
+													       <p>
+														      {volist name='rs' id='v2' key=k2''}
+														        {eq name='$v2.pid' value='$v1.id'}
+														       <input type="checkbox" name="rulestr[]" value= "{$v2.id}">{$v2.namestr}&nbsp;&nbsp;
+															   {/eq}
+														      {/volist}
+															   
+														   </p>
+														    {/eq}
+														  {/volist}
+														</p>									   
+												    </li>
+													{/eq}	
+													{/volist}
+										       </ul> 
+											</div>
+											
+											{:textareaTag("权限描述","intro")}									 
+									    <button type="submit" class="btn btn-info">添加权限 </button>
+
+										</form>
+									</div>
+							   </div>
+						 </div>
+			
+			     </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{include file="public/footer" /}

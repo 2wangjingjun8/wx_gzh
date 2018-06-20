@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>会员</title>
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css"/>
+	<link rel="stylesheet" href="__PUBLIC__/css/user.css"/>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/user.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+<body>
+	<!--头部-->
+	<header class="header">
+		<a href="login.html"><img src="{$userinfo['headimgurl']}" alt="user"></a>
+		<h4>{$userinfo['nickname']}</h4>
+	</header>
+	<!--头部 end-->
+	<!--中间内容部分-->
+	<article class="content">
+		<!--我的订单-->
+		<section class="order">
+			<h2>我的订单<a href="my_order_page.html">查看更多订单</a></h2>
+			<ul>
+				<li><a href="my_order_page.html"><img src="__PUBLIC__/images/user2.png" alt="user"><span>待付款</span></a></li>
+				<li><a href="my_order_page.html"><img src="__PUBLIC__/images/user3.png" alt="user"><span>待发货</span></a></li>
+				<li><a href="my_order_page.html"><img src="__PUBLIC__/images/user4.png" alt="user"><span>待收货</span></a></li>
+				<li><a href="my_order_page.html"><img src="__PUBLIC__/images/user5.png" alt="user"><span>待评价</span></a></li>
+				<li><a href="my_order_page.html"><img src="__PUBLIC__/images/user6.png" alt="user"><span>退款</span></a></li>
+			</ul>
+		</section>
+		<!--我的订单 end-->
+		<!--个人-->
+		<section class="user">
+			<ul>
+				<li><h2>个人信息<span></span></h2>
+					<ol>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+					</ol>
+				</li>
+				<li><h2>地址管理<span></span></h2>
+					<ol>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+					</ol>
+				</li>
+				<li><h2>购买记录<span></span></h2>
+					<ol>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+					</ol>
+				</li>
+				<li><h2>账号安全<span></span></h2>
+					<ol>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+					</ol>
+				</li>
+				<li><h2>我的足迹<span></span></h2>
+					<ol>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+						<li><a href="javascript:void(0);">个人信息</a></li>
+					</ol>
+				</li>
+
+				<li><h2 style="text-align:center;"><button id="logout">退出当前账户</button></h2>
+				</li>
+			</ul>
+		</section>
+	</article>
+	<!--中间内容部分 end-->
+	<script>
+		$(function(){
+			$('#logout').click(function(){
+				location.href="{:U('logout')}";
+			})
+		});
+	</script>
+	<include file="Public/footer" />

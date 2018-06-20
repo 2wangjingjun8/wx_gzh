@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<base href={$baseurl}" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{$title}——德尔拉菲母婴用品有限公司</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="static/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="static/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <script src="static/assets/js/jquery-1.10.2.js"></script>
+
+</head>
+<body style="background-color: #E2E2E2;">
+    <div class="container">
+        <div class="row text-center " style="padding-top:40px;">
+            <div class="col-md-12">
+                <img src="static/assets/img/drafe.jpg" />
+            </div>
+        </div>
+         <div class="row ">
+               
+                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                           
+                            <div class="panel-body">
+                                <form role="form" action=""  method="POST">
+                                    <hr />
+                                    <h5>德尔拉菲后台登录</h5>
+                                       <br />
+                                    <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
+                                            <input type="text" class="form-control" name="count_name" placeholder="用户名" id="count_name" />
+                                    </div>
+                                    <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
+                                            <input type="password" class="form-control" name="password"  placeholder="登陆密码" id='password' />
+                                    </div>
+                                    <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="rem" /> 记住我
+                                            </label>
+                                            <span class="pull-right">
+                                                 <a href="index.html" >忘记密码 ? </a> 
+                                            </span>
+                                    </div>
+                                    <div class="form-group">
+                                            <label>验证码：</label>
+													<input type="text" name="captcha" id='vcode'  style="width:100px"/>
+													<div><img src="{:captcha_src()}" alt="captcha" id='captcha' width='200' height='50'  onclick="this.src='{:captcha_src()}?num='+Math.random()" /></div>
+													
+                                    </div>
+										<a class="btn btn-primary">现在去登陆</a>
+                                     
+                                    </form>
+                            </div>
+                           
+                        </div>
+                
+                
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function(){
+	    $('.btn-primary').click(function(){
+			var count_name = $("#count_name").val();
+			var password = $("#password").val();
+			var vcode = $("#vcode").val();
+			
+			if(count_name == ''){
+				alert('用户名不能为空');
+				return false;
+			}else if(password == ''){
+				alert('密码不能为空');
+				return false;
+			}else if(vcode == ''){
+				alert('验证码不能为空');
+				return false;
+			}else{
+				$.post('admin/index/login',{count_name:count_name,password:password,captcha:vcode},function(data){
+				   if(data == '登录成功'){
+				   alert(data);
+				       location.href='admin/index/index';
+				   }else{
+				       alert(data);
+					   return  false;
+				   }
+				})
+			}
+		})
+		
+	})
+</script>
+</html>

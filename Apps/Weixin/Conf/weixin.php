@@ -13,7 +13,7 @@ return array(
 						{
 							"type":"click",
 							"name":"天气查询",
-							"key":"广州"
+							"key":"weather"
 						},
 						{
 							"type":"click",
@@ -24,10 +24,6 @@ return array(
 							"type":"click",
 							"name":"翻译查询",
 							"key":"翻译"
-						},
-						{	"type":"view",
-							"name":"转视频链接",
-							"url":"http://www.ice20.top/weixin2/Wechat.php/product/homepage"
 						}
 			          		]
 			          	},
@@ -37,22 +33,22 @@ return array(
 						{
 							"type":"view",
 							"name":"商城首页",
-							"url":"http://www.ice20.top/weixin2/Wechat.php/product/homepage"
+							"url":"http://www.ice20.top/weixin2/index/homepage"
 						},
 						{
 							"type":"view",
 							"name":"最新商品",
-							"url":"http://www.ice20.top/weixin2/Wechat.php/product/new_product"
+							"url":"http://www.ice20.top/weixin2/product/new_product"
 						},
 						{
 							"type":"view",
 							"name":"优惠商品",
-							"url":"http://www.ice20.top/weixin2/Wechat.php/product/discount_price"
+							"url":"http://www.ice20.top/weixin2/product/discount_price"
 						},
 						{
 							"type":"view",
 							"name":"限时特价",
-							"url":"http://www.ice20.top/weixin2/Wechat.php/product/limit_price"
+							"url":"http://www.ice20.top/weixin2/product/limit_price"
 						}
 			          		]
 			          	},
@@ -62,17 +58,17 @@ return array(
 						{
 							"type":"view",
 							"name":"会员中心",
-							"url":"http://www.ice20.top/weixin2/Wechat.php/user/membercenter"
+							"url":"http://www.ice20.top/weixin2/user/membercenter"
 						},
 						{
 							"type":"view",
 							"name":"会员信息",
-							"url":"http://www.ice20.top/weixin2/Wechat.php/index/get_userinfo"
+							"url":"http://www.ice20.top/weixin2/index/get_userinfo"
 						},
 						{
 							"type":"click",
 							"name":"会员签到",
-							"key":"签到"
+							"key":"sign"
 						}
 			          		]
 			          	}

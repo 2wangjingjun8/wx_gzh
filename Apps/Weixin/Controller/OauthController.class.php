@@ -11,6 +11,7 @@ class OauthController extends CommonController
 	public function wx_login()
 	{
 		$userinfo = session('userinfo');
+		dump($userinfo);exit;
 		if($userinfo ){
 			return $userinfo;
 		}else{
@@ -39,6 +40,7 @@ class OauthController extends CommonController
 				$api_url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".C('appid')."&secret=".C('secret')."&code=".$code."&grant_type=authorization_code";
 				$res = getRequest($api_url);
 				if($res['errcode']){
+					//有错误的话执行
 					exit($res['errmsg']);
 				}else{
 					//拉取用户消息

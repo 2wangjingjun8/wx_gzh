@@ -1,0 +1,46 @@
+{include file="public/header" /} 
+ <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">{$name}</h1>
+
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+				<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+						      <div class="panel panel-info">
+									<div class="panel-heading">
+									   {$title}
+									</div>
+									<div class="panel-body">
+										<form role="form" action="" method="post">
+											<div class="form-group">
+												<input class="form-control" type="hidden" name="id"value='<?php echo $result['id'];?>'/>
+											</div>
+											<div class="form-group">
+														<label>关键词</label>
+														<input class="form-control" type="text" name="keyword" value="<?php echo $result['keyword'];?>"/>						
+											</div>		
+											 <div class="form-group">
+														<label>被搜索次数</label>
+														<input class="form-control" type="text" name="counttimes" value="<?php echo $result['counttimes'];?>"/>
+											 </div>
+                                        <hr>											
+									    <button type="submit" class="btn btn-info">提交更新 </button>
+
+										</form>
+									</div>
+							   </div>
+						 </div>
+			
+			     </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{include file="public/footer" /}

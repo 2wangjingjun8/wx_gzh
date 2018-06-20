@@ -1,0 +1,71 @@
+﻿ {include file="public/header" /}   
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">{$title}</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row">
+				<form role="form" action="" method="post" id="form" enctype="multipart/form-data">
+				<input type="hidden" name="proid" value="{$proid}">
+                <div class="col-md-6 col-sm-6 col-xs-6">     
+						   <div class="panel panel-info">
+									<div class="panel-heading">
+									   选择库存属性
+									</div>
+									<div class="panel-body">
+									      <p>产品名：{$goods.pro_name}</p>
+									      <p>产品图：<img src="{$goods.pro_photo}" width="100" height="100"></p>
+									      <p>产品价钱：{$goods.shop_price}</p>
+									</div>
+								    <div class="panel panel-primary">
+										  <table class="table">
+											<thead>
+											</thead>
+											<tbody id="contentDiv">
+												  {$html}
+											</tbody>
+										  </table>
+									</div>	
+							</div>
+							
+                 </div>
+				<div class="col-md-6 col-sm-6 col-xs-6">
+						   <div class="panel panel-info">
+									<div class="panel-heading">
+									   填写新套餐名称
+									</div>
+										{:inputTag('套餐名称','package_name')}
+							</div>
+                 </div>
+				<div class="col-md-6 col-sm-6 col-xs-6">
+						<div class="panel panel-info">
+									<div class="panel-heading">
+									   选择套餐相关的配件
+									</div>
+						
+									<div class="fitting_area"></div>
+									<div><a class='btn btn-info' id="add_fitting">添加配件或赠品</a></div>
+					    </div>
+               </div>
+
+				  <div>
+				  <button type="submit" class="btn btn-info">提交产品信息</button>
+				  </div>
+                  </form>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	<script>
+		$(function(){
+			$("#add_fitting").click(function(){
+				$(".fitting_area").append('<div class="form-group"><select class="form-control" name="package_info[]"><option>..请选择..</option>{volist name="fitting" key="k" id="v"}<option value="{$v.id}">{$v.fit_name}</option>{/volist}</select></div>');
+			});
+		});
+	</script>
+ {include file="public/footer" /}   

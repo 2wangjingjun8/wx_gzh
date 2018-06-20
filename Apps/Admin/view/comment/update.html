@@ -1,0 +1,54 @@
+{include file="public/header" /} 
+ <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">{$name}</h1>
+
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+				<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						      <div class="panel panel-info">
+									<div class="panel-heading">
+									   {$title}
+									</div>
+									<div class="panel-body">
+										<form role="form" action="" method="post">
+											<div class="form-group">
+												<input class="form-control" type="hidden" name="id"value='<?php echo $result['id'];?>'/>
+											</div>		
+											 <div class="form-group">
+														<label>用户id</label>
+														<?php echo $result['user_id'];?>
+											 </div>
+											<div class="form-group">
+														<label>评论内容</label>
+														<?php echo $result['content'];?>
+											</div> 
+											 <div class="form-group">
+														<label>评价等级</label>
+														<?php echo $result['grade'];?>
+											 </div>
+											 <div class="form-group">
+														<label>评论时间：</label>
+														<?php echo $result['com_time'];?>
+											 </div>
+                                        <hr>											
+									    <button type="submit" class="btn btn-info">提交更新 </button>
+
+										</form>
+									</div>
+							   </div>
+						 </div>
+			
+			     </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{include file="public/footer" /}

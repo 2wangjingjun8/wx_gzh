@@ -1,0 +1,61 @@
+ {include file="public/header" /}   
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">{$title}</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+						   <div class="panel panel-info">
+									<div class="panel-heading">
+									   修改文章分类的子分类
+									</div>
+									<div class="panel-body">									
+										<form role="form" action="" method="post" id="form">
+										<input  type="hidden" name="id" value="{$rs.id}">
+															<div class="form-group">
+																<label>分类中文名称</label>
+																<input class="form-control" type="text" name="cat_name" id="cat_name" value="{$rs.cat_name}">
+																<p class="help-block"></p>														
+															</div>															
+															<div class="form-group">
+																<label>自定义排序</label>
+																<input class="form-control" type="text" name="sort" id="sort" value="{$rs.sort}">
+																<p class="help-block"></p>														
+															</div>
+															<div class="form-group">
+																<label>是否显示</label>
+																<div class="radio">
+																	<label>
+																		   <input type="radio" name="isshow" id="isshow" value="1" {eq name='rs.isshow' value='1'}checked="checked"{/eq}>显示
+																	</label>
+																</div>
+																<div class="radio">
+																	<label>
+																			<input type="radio" name="isshow" id="isshow" value="0" {eq name='rs.isshow' value='0'}checked="checked"{/eq}>不显示
+																	</label>
+																</div>
+															</div>																						
+											</div>												    							
+											<button type="submit" class="btn btn-info">提交信息</button>
+
+							     		</form>
+								    </div>
+							</div>
+                 </div>
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+<script>
+$(function(){
+
+});
+</script>
+ {include file="public/footer" /}   

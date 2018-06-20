@@ -22,15 +22,18 @@ class EventController extends CommonController
 				$this->message->to_select_reply('欢迎您的扫码关注,你的场景值是'.$EventKey);
 			}elseif($this->arr_xml['Event'] == 'CLICK'){
 				$EventKey = $this->arr_xml['EventKey'];
-				if($EventKey == '广州'){
-					$return_weather = $this->api->get_weather($EventKey);
+				if($EventKey == 'weather'){
+					//$return_weather = $this->api->get_weather($EventKey);
 					// dump($return_weather);
 					//回复查询天气的消息
-					$this->message->to_select_reply($return_weather);
+					$this->message->to_select_reply('查询天气，请回复格式例如“天气：广州”');
 				}elseif($EventKey == 'userinfo'){
 					$userinfo = $this->user->get_userinfo();
 					//回复个人信息的消息
 					$this->message->to_select_reply($userinfo);
+				}elseif($EventKey == 'sign'){
+					$msg = $this->user->sign();
+					$this->message->to_select_reply($msg);
 				}
 			}elseif($this->arr_xml['Event'] == 'unsubscribe'){
 			           //用户取消关注时，保存记录

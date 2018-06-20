@@ -1,0 +1,61 @@
+{include file="public/header" /}
+       <!-- /. NAV SIDE  -->
+       <div id="page-wrapper">
+           <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">{$title}</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+						<div class="row">
+									<div class="col-md-12">
+									    {foreach name="rs" key="k" item="v"}
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												{$v.cat_name}
+												<button class="btn btn-xs btn-primary pull-right" onclick="window.location.href='index.php/admin/category/addson?id={$v.id}&level={$v.level}'">添加子分类</button>
+											</div>
+											<div class="panel-body">
+												<div class="panel-group" id="accordion">
+												   {notempty name="v.son"} 
+												   {foreach name="v.son" key="k1" item="v1"}
+													<div class="panel panel-default">
+														<div class="panel-heading">
+															<h4 class="panel-title">
+																<span data-toggle="collapse" data-parent="#accordion" href="#collapse{$k1}" style="cursor:pointer" class="collapsed">{$v1.cat_name}</span>
+																<button class="btn btn-xs btn-danger pull-right" onclick="window.location.href='index.php/admin/category/del?id={$v1.id}'"><i class="glyphicon glyphicon-home"></i>分类删除</button>	
+																<button class="btn btn-xs btn-primary pull-right" onclick="window.location.href='index.php/admin/category/update?id={$v1.id}'"><i class="glyphicon glyphicon-search"></i>分类编辑</button>
+																<button class="btn btn-xs btn-info pull-right" onclick="window.location.href='index.php/admin/category/addson?id={$v1.id}&level={$v1.level}'">添加子分类</button>																
+															</h4>
+														</div>
+														<div id="collapse{$k1}" class="panel-collapse collapse" style="height: 0px;">
+															<div class="panel-body">
+											                     <ul class="nav nav-9second-level">
+																	    {notempty name="v1.grandson"} 
+																		{volist name="v1.grandson" id="value" key="key"}
+																		<li>
+																			<span><i class="fa fa-coffee"></i>{$value.cat_name}</span>
+										                                    <button class="btn btn-xs btn-danger pull-right" onclick="window.location.href='index.php/admin/category/del?id={$value.id}'"><i class="glyphicon glyphicon-home"></i>分类删除</button>
+																			<button class="btn btn-xs btn-primary pull-right" onclick="window.location.href='index.php/admin/category/update?id={$value.id}'"><i class="glyphicon glyphicon-search"></i>分类编辑</button>
+																		</li>
+																		{/volist}
+																		{/notempty}
+																	</ul>
+															</div>
+														</div>
+													</div>
+													{/foreach}
+													{/notempty}
+												</div>
+											</div>
+										</div>
+										{/foreach}
+									</div>
+								</div> 
+			</div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+
+{include file="public/footer" /}

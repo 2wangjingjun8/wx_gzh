@@ -1,0 +1,67 @@
+ {include file="public/header" /}   
+	<div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">{$title}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                        <div class="panel panel-primary">
+						      <div class="row">
+									<div class="col-md-12">
+									    {foreach name="rs" key="k" item="v"}
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												{$v.namestr}
+												<button class="btn btn-xs btn-info pull-right" onclick="window.location.href='index.php/admin/homemenu/addson?id={$v.id}&type={$v.type}'">子导航导航添加</button>
+											</div>
+											<div class="panel-body">
+												<div class="panel-group" id="accordion">
+												   {notempty name="v.son"} 
+												   {foreach name="v.son" key="k1" item="v1"}
+													<div class="panel panel-default">
+														<div class="panel-heading">
+															<h4 class="panel-title">
+																<span data-toggle="" data-parent="#accordion" href="#collapse{$k1}" style="cursor:pointer" class="collapsed">{$v1.namestr}</span>
+																<button class="btn btn-xs btn-danger pull-right" onclick="window.location.href='index.php/admin/homemenu/del?id={$v1.id}'"><i class="glyphicon glyphicon-home"></i>导航删除</button>
+																<button class="btn btn-xs btn-primary pull-right" onclick="window.location.href='index.php/admin/homemenu/update?id={$v1.id}'"><i class="glyphicon glyphicon-search"></i>导航编辑</button>																
+															</h4>
+														</div>
+														<div id="collapse{$k1}" class="panel-collapse collapse" style="height: 0px;">
+															<div class="panel-body">
+											                        <ul class="nav nav-9second-level">
+																	    {notempty name="v1.grandson"} 
+																		{volist name="v1.grandson" id="value" key="key"}
+																		<li>
+																			<span><i class="fa fa-coffee"></i>{$value.namestr}</span>										
+																			<button class="btn btn-xs btn-primary pull-right" onclick="window.location.href='index.php/admin/homemenu/update?id={$value.id}'"><i class="glyphicon glyphicon-search"></i>导航编辑</button>
+										                                    <button class="btn btn-xs btn-danger pull-right" onclick="window.location.href='index.php/admin/homemenu/del?id={$value.id}'"><i class="glyphicon glyphicon-home"></i>导航删除</button>
+																		</li>
+																		{/volist}
+																		{/notempty}
+																	</ul>
+															</div>
+														</div>
+													</div>
+													{/foreach}
+													{/notempty}
+												</div>
+											</div>
+										</div>
+										{/foreach}
+									</div>
+								</div> 		
+						</div>
+                        <hr />
+                        <ul class="pagination">
+					    </ul>
+                     </div>
+                </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+{include file="public/footer" /}

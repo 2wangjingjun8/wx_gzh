@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$title}</title>
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css"/>
+	<link rel="stylesheet" href="__PUBLIC__/css/login.css"/>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.touchSwipe.min.js"></script>
+</head>
+<body>
+	<!--头部-->
+	<header class="header">
+		<a href="javascript:window.history.back()"><img src="__PUBLIC__/images/icon25.png" alt="icon"></a>
+		<h2>登录</h2>
+	</header>
+	<!--头部 end-->
+	<!--中间内容部分-->
+	<article class="content">
+		<!--注册页面-->
+		<section class="login">
+			<div>
+				<img src="__PUBLIC__/images/app.jpg" alt="jpg">
+				<p>已有账号？返回<a href="{:U('registere')}">注册</a></p>
+			</div>
+			<form action="homepage.html">
+				<label for="#">
+					<span>会员名：</span><input type="text" id="user">
+				</label>
+				<p class="user_tip">不能以数字开头，长度为8到16个字符</p>
+				<label for="#">
+					<span>密&nbsp;&nbsp;&nbsp;码：</span><input type="password" id="pasw">
+				</label>
+				<p class="pasw_tip">长度为6到18个字符</p>
+				<button id="btn_login">立即登录</button>
+				<a href="#">忘记密码？</a>
+				<button id="btn_wxlogin">微信登录</button>
+			</form>
+			<img src="__PUBLIC__/images/login.png" alt="login">
+		</section>
+		<!--注册页面 end-->
+	</article>
+	<!-- 中间内容部分 end -->
+		<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/login.js"></script>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('#btn_wxlogin').click(function(){
+			location.href="{:U('wxlogin')}";
+			return false;
+		})
+	})
+</script>
+</html>

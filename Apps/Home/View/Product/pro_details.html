@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$title}</title>
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css"/>
+	<link rel="stylesheet" href="__PUBLIC__/css/pro_center.css"/>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/style.js"></script>
+</head>
+<body>
+	<!--头部-->
+	<header class="header">
+		<a href="javascript:window.history.back()"><img src="__PUBLIC__/images/icon19.png" alt="icon"></a>
+		<h2>商品</h2>
+	</header>
+	<!--头部 end-->
+	<!--中间内容部分-->
+	<article class="content">
+		<!--banner-->
+		<section class="banList">
+			<ul>
+			<volist name="pro_details.photo_detail" id="v">
+				<li><img src="http://www.ice20.top/weixin2/{$v}" width='100%' height="100%"></li> 
+			</volist>
+			</ul>
+			<!--小圆点-->
+			<ol class="circle">
+				<li class="on"></li>
+				<li></li>
+				<li></li>
+			</ol>
+			<!--小圆点 end-->
+		</section>
+		<!--banner end-->
+		<!--商品条件-->
+		<section class="pro_top">
+			<h3>{$pro_details.pro_name}</h3>	
+			<h4>{$pro_details.description}</h4>	
+			<p><em>￥</em><span>{$pro_details.shop_price}</span></p>
+			<p>价格<em>￥</em><span>{$pro_details.market_price}</span></p>
+			<span>快递：<b>0.00</b></span>
+			<span>月销量2352笔</span>
+			<div class="pro_color">
+				<h4>选择颜色：</h4>
+				<ul>
+					<li>银色<span class="on"></span></li>
+					<li>黑色<span></span></li>
+					<li>灰色<span></span></li>
+				</ul>
+			</div>
+			<div class="pro_memory">
+				<h4>选择内存：</h4>
+				<ul>
+					<li>16G<span class="on"></span></li>
+					<li>32G<span></span></li>
+					<li>64G<span></span></li>
+				</ul>
+			</div>
+		</section>
+		<!--商品条件 end-->
+		<section class="pro_center">
+			<ul>
+				<!--领取优惠券-->	
+				<li>
+					<h2>领取优惠券<span></span></h2>
+					<ol>
+						<li><a href="javascript:void(0);">买100送100优惠券</a></li>
+						<li><a href="javascript:void(0);">买200送200优惠券</a></li>
+						<li><a href="javascript:void(0);">买300送300优惠券</a></li>
+					</ol>
+				</li>
+				<!--产品分类-->	
+				<li>
+					<h2>产品分类<span></span></h2>
+					<ol>
+						<li><a href="javascript:void(0);">产品1</a></li>
+						<li><a href="javascript:void(0);">产品2</a></li>
+						<li><a href="javascript:void(0);">产品3</a></li>
+					</ol>
+				</li>
+			</ul>
+		</section>
+		<!--用户评价-->
+		<section class="pro_bottom">
+			<h2>用户评价</h2>
+			<div class="evaluation">
+				<h3>宝贝评价(625)</h3>
+				<ul>
+					<li><a href="javascript:void(0);">音质不错</a></li>
+					<li><a href="javascript:void(0);">外观漂亮</a></li>
+					<li><a href="javascript:void(0);">做工精细</a></li>
+					<li><a href="javascript:void(0);">声音特别大</a></li>
+					<li><a href="javascript:void(0);">很好有耐听的播放器</a></li>
+					<li><a href="javascript:void(0);">还不错</a></li>
+				</ul>
+			</div>
+			<div class="eva_list">
+				<!--音质不错-->
+				<div>
+					<ul>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+					</ul>
+				</div>
+				<!--外观漂亮-->
+				<div>
+					<ul>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+					</ul>
+				</div>
+				<!--做工精细-->
+				<div>
+					<ul>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+					</ul>
+				</div>
+				<!--声音特别大-->
+				<div>
+					<ul>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+					</ul>
+				</div>
+				<!--很好有耐听的播放器-->
+				<div>
+					<ul>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+					</ul>
+				</div>
+				<!--还不错-->
+				<div>
+					<ul>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+						<li>
+							<div>
+								<img src="__PUBLIC__/images/icon23.png" alt="icon">
+								<b>消失的流星</b>
+								<span><em></em><em></em><em></em><em></em><em></em></span>
+							</div>
+							<p>是一款为时尚用户打造的极具时尚元素的动感播放器，单元采用4英寸防磁型扬声器，中高音单元外径50×90MM........</p>
+							<p><em>2017.6.18</em><i>M3 DAP 便携式播放器</i><i>银色</i><i>16G</i></p>
+						</li>
+					</ul>
+				</div>
+				<a href="javascript:void(0);">查看全部评价</a>
+			</div>
+		</section>
+		<!--用户评价 end-->
+	</article>
+	<!--中间内容部分 end-->
+	<!--尾部-->
+	<footer class="footer">
+		<!--尾部导航-->
+		<section class="pro_nav">
+				<ul>
+					<li><a href="javascript:void(0);">服务</a></li>
+					<li><a href="javascript:void(0);">关注</a></li>
+					<li id="addcat"><a href="javascript:void(0);"  class="add_cart" iddata="{$pro_details.id}">加入购物车</a></li>
+					<li><a href="javascript:void(0);">立即购买</a></li>
+				</ul>
+		</section>
+		<!--尾部导航 end-->
+	</footer>
+	<!--尾部 end-->
+	<script type="text/javascript" src="__PUBLIC__/js/pro_detail.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/shopcar.js"></script>
+	<script>
+	$(function(){
+		//商品列表页，ajax加入购物车
+		$('.add_cart').click(function(){
+			var proid = $(this).attr('iddata');
+			$.get("{:U('Cart/add_cart')}",{proid:proid},function(res){
+				if(res.errcode ==100){
+					alert(res.errmsg);
+					location.href="{:U('User/login')}"
+				}else if(res.errcode ==0){
+					alert(res.errmsg);
+				}
+			},"json")
+		})
+	})
+	</script>
+</body>
+</html>

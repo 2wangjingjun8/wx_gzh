@@ -17,7 +17,7 @@ class CommonController extends Controller {
 	public static $url; 
 	public function _initialize()
 	{
-		$this->config();
+		$this->config();//获取配置JSSDK，调用接口
 	}
 
 

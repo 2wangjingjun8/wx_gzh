@@ -1,0 +1,39 @@
+{include file="public/header" /}
+<!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">{$name}</h1>
+
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+				<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+						      <div class="panel panel-info">
+									<div class="panel-heading">
+									   {$title}
+									</div>
+									<div class="panel-body">
+										<form role="form" action="" method="post" enctype="multipart/form-data" >
+										    {:inputTag("品牌名称","brand_name",$rs.brand_name)}
+											{:uploadTag('品牌logo','brand_logo',$rs.brand_logo)}
+										    {:inputTag("品牌官网网址","brand_url",$rs.brand_url)}
+											{:textareaTag("品牌简介","brand_info",$rs.brand_info)}
+											 		 
+									    <button type="submit" class="btn btn-info">添加</button>
+
+										</form>
+									</div>
+							   </div>
+						 </div>
+			
+			     </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+	{include file="public/footer" /}

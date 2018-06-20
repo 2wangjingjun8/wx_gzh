@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<base href="{$baseurl}" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{$title}</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="static/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="static/assets/css/font-awesome.css" rel="stylesheet" />
+     <!--PAGE LEVELC STYLES-->
+    <link href="static/assets/css/invoice.css" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="static/assets/css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="static/assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+	<!-- 编辑器-->
+    <link href="static/kindeditor/themes/default/default.css" rel="stylesheet" />
+	 <script src="static/kindeditor/kindeditor-min.js"></script>
+	 <script src="static/kindeditor/lang/zh_CN.js"></script> 
+	 <!-- 时间插件-->
+	 <script src="static/assets/js/showdate.js"></script>
+     <!-- JQUERY SCRIPTS -->
+    <script src="static/assets/js/jquery-1.10.2.js"></script>   
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="admin/index/index">欢迎来到德拉斐尔</a>
+            </div>
+
+            <div class="header-right">
+                <a href="home/index/index" target='_blank' class="btn btn-primary" title="前台网站"><b>访问网站</b></a>
+                <a href="admin/index/logout" class="btn btn-danger" title="Logout">退出登录</a>
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                            <img src="static/assets/img/user.png" class="img-thumbnail" />
+
+                            <div class="inner-text">
+                                wangjingjun
+                            <br />
+                                <small>Last Login : 1 天前 </small>
+                            </div>
+                        </div>
+
+                    </li>
+
+                    <li>
+                        <a class="active-menu"  href="admin/index/index"><i class="fa fa-dashboard "></i>网站后台导航</a>
+                    </li>
+					
+					{volist name='adminnav' id='v' key='k'}
+                    <li>
+					{eq name='$v.pid' value='0'}
+                        <a href="###"><i class="fa fa-send "></i>{$v.namestr}<span class="fa arrow"></a>{/eq}
+						   <ul class="nav nav-second-level">
+						   {volist name='adminnav' id='val' key='key'}
+							    {eq name='$val.pid' value='$v.id'}
+                            <li>
+                                <a href="{:url('admin/'.$val.fun.'/index','page=1')}"><i class="fa fa-recycle"></i>{$val.namestr}</a>
+                            </li>{/eq}
+					       {/volist}
+							</ul>
+                    </li>
+					{/volist}
+                </ul>
+            </div>
+
+        </nav>

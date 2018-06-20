@@ -11,18 +11,17 @@ class ApiController extends CommonController
 	//天气接口查询
 	public function get_weather($city)
 	{
-		$api_url = 'https://www.sojson.com/open/api/weather/json.shtml?city='.$city;
+		$api_url = 'http://wthrcdn.etouch.cn/weather_mini?city='.$city;
 		// echo $api_url;
 		$res = request($api_url);
 		// dump($res);exit;
-		if($res['status'] == '200'){
+		if($res['status'] == '1000'){
 			$data = $res['data'];
-			$city = $res['city'];
-			$reply_content .="今天天气\n";
+			$city = $data['city'];
+			$reply_content .="日期：".$data['forecast'][0]['date']."\n";
 			$reply_content .="城市：".$city."\n";
-			$reply_content .="湿度：".$data['shidu']."\n";
-			$reply_content .="空气质量：".$data['quality']."\n";
-			$reply_content .="温度：".$data['wendu']."\n";
+			$reply_content .="状态：".$data['forecast'][0]['type']."\n";
+			$reply_content .="温度：".$data['wendu']."℃\n";
 			$reply_content .="感冒指数：".$data['ganmao']."\n";
 	                     // dump($reply_content);exit;
 		}else{

@@ -1,0 +1,70 @@
+ {include file="public/header" /}   
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">{$title}</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row">
+				<form role="form" action="" method="post" id="form" enctype="multipart/form-data">
+				<input type="hidden" name="proid" value="{$proid}">
+				<input type="hidden" name="attrid" value="{$attrid}">
+                <div class="col-md-6 col-sm-6 col-xs-12">     
+						   <div class="panel panel-info">
+										
+									  <table class="table">
+										<tbody>
+											{$html}
+										</tbody>
+									  </table>
+							</div>
+							
+                 </div>
+				 <div class="col-md-6 col-sm-6 col-xs-12">
+						   <div class="panel panel-info">
+									<div class="panel-heading">
+									   选择库存属性
+									</div>
+									<div class="panel-body">
+									      <p>产品名：{$goods.pro_name}</p>
+									      <p>产品图：<img src="{$goods.pro_photo}" width="100" height="100"></p>
+									      <p>产品价钱：{$goods.shop_price}</p>
+									</div>
+									   {volist name="goodsAttr" key="k" id="v"} 
+										<div class="panel-body">									
+											<div class="form-group">
+												<label>{$v.attrname}选择</label>
+												<select class="form-control" name="attrval[]">
+													        <option value="">..请选择..</option>
+															{volist name="v.attrval" key="key" id="value"}
+															<option value="{$value}">{$value}</option>	
+                                                     {/volist}															
+												</select>
+										    </div>											
+								        </div>
+										{/volist}	
+									<div class="panel-heading">
+									   填写产品数量
+									</div>
+                                   {:inputTag('库存数量','num')}	
+							</div>
+                 </div>
+
+				 <div>
+				  <button type="submit" class="btn btn-info">提交补货</button>
+				  </div>
+                  </form>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+<script>
+$(function(){
+		
+});
+</script>
+ {include file="public/footer" /}   

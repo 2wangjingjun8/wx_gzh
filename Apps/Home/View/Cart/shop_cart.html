@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$title}</title>
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css"/>
+	<link rel="stylesheet" href="__PUBLIC__/css/shop_cart.css"/>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+	<scrip"text/javascript" src="__PUBLIC__/js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+<body onload="">
+	<!--头部-->
+	<header class="header">
+		<a href="javascript:window.history.back()"><img src="__PUBLIC__/images/icon25.png" alt="icon"></a>
+		<h2>购物车</h2>
+	</header>
+	<!--头部 end-->
+	<!--中间内容部分-->
+	<article class="content">
+		<!--购物车-->
+		<section class="shop_cart">
+		<ul id="carUl">
+			<volist name='cartlist' id='v'>
+				<li data-id="5" class="number">
+					<label for="data_1" class="checkone"><input type="checkbox" id="data_1" class="checked">
+					</label>
+					<a href="{:U('product/pro_details',array('id'=>$v['id']))}">
+						<img src="http://www.ice20.top/weixin2/{$v.pro_photo}" alt="img" style="width:56px;height:56px;"></a>
+					<div>
+						<h2><a href="{:U('product/pro_details',array('id'=>$v['id']))}">{$v.pro_name}</a></h2>
+						<p><span>输入灵敏度：</span><em>520mV/47KΩ(低增益)</em></p>
+						<a href="javascript:void(0);" class="reduce" iddata="{$v.cart_id}">-</a>
+						<input type="text" value="{$v.buy_num}" " class="num">
+						<a href="javascript:void(0);" class="add" iddata="{$v.cart_id}">+</a>
+					</div>
+					<div>
+						<b onclick="" data="删除购物车"></b>
+						<span>原价:¥{$v.market_price}</span><i>现价:</i><em>¥</em><em class="price">{$v.shop_price}</em>
+					</div>
+				</li>
+			</volist>
+		</ul>
+		<div>
+				<label for="all"><input type="checkbox" id="all"><label for="all" id="checkall"></label><span>全选</span></label>
+				<span>总价：<em>¥</em><em id="sum">230</em></span>
+				<a href="javascript:void(0);" >去结算</a>
+		</div>
+		</section>
+		<!--购物车 end-->
+	</article>
+	<!--中间内容部分 end-->
+	<script>
+	$(document).ready(function(){
+		//减
+		$(".reduce").on("click",function(){
+			var num = $(this).next().val();
+			num--;
+			$(this).next().val(num);
+
+			//处理修改购物车的请求
+			$.get("{:U('changecart')}",{cart_id:$(this).attr("iddata"),buy_num:num},function(res){
+				if(res.errcode !=0){
+					alert(res.errmsg);
+				}
+			})
+		})
+		//加
+		$(".add").on("click",function(){
+			var num = $(this).prev().val();
+			num++;
+			$(this).prev().val(num);
+
+			//处理修改购物车的请求
+			$.get("{:U('changecart')}",{cart_id:$(this).attr("iddata"),buy_num:num},function(res){
+				if(res.errcode !=0){
+					alert(res.errmsg);
+				}
+			})
+		})
+
+
+		//点击单个选项
+		$('.checkone').click.each(function(k,v){
+			if($('.checkone').eq(k).hasClass('on')){
+				$('.checkone').eq(k).removeClass('on');
+			}else{
+				$('.checkone').eq(k).addClass('on');
+			}
+		})
+		//点击全选按钮的时候
+		$('#checkall').click(function(){
+			var checkon = $(this).parent().parent().parent().find('.number label').hasClass('on');
+			// alert(checkon)
+			if(checkon){
+				$(this).removeClass('on');
+				$(this).parent().parent().parent().find('.number label').removeClass('on');
+				$(this).parent().parent().parent().find('.number label .checked').attr('checked',false);
+			}else{
+				$(this).addClass('on');
+				$(this).parent().parent().parent().find('.number label').addClass('on');
+				$(this).parent().parent().parent().find('.number label .checked').attr('checked',true);
+				//总价加起来
+				var totalprice = '';
+			}
+			
+		})
+
+		
+		
+	});
+</script>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+<!-- 	<script type="text/javascript" src="__PUBLIC__/js/shop_cart.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/shopcar.js"></script> -->
+
+	<include file="Public/footer" />
