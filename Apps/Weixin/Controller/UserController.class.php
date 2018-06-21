@@ -12,8 +12,31 @@ class UserController extends CommonController
 	public function sign()
 	{
 		$user = M('sign_in');
-		$userinfo = session('userinfo');
-		dump($userinfo);exit;
+		$result = $this->get_userinfo();
+		$userinfo = $result['data'];
+
+		//实例化签到表
+		$sign = M('sign_in');
+		//判断用户当天是否签到
+		$check = $sign->where(array('year'=>date("Y"),'month'=>date("m"),'day'=>date("d")))->find();
+		if($check){
+			$reply = "亲，您今天已经签到过了";
+		}else{
+			//插入数据库
+			$rs = $sign->add(array(
+					'user_id'=>$userinfo['openid'],
+					'nickname'=>$userinfo['nickname'],
+					'year'=>date("Y"),
+					'month'=>date("m"),
+					'day'=>date("d"),
+					'time'=>date("H").':'.date("i").':'.date("s"),
+				));
+			if($rs){
+				$reply = '签到成功,奖励经验值10点';
+			}
+		}
+		// dump($reply);exit;
+		return $reply;
 
 	}
 	public function get_userinfo()
@@ -22,6 +45,7 @@ class UserController extends CommonController
 		$data = file_get_contents($api_url);
 		$data = json_decode($data,true);
 		// dump($data);exit;
+		$result['data'] = $data;
 		$userinfo = '';
 		$userinfo.="昵称：".$data['nickname']."\n";
 		if($data['sex'] == '1'){
@@ -32,7 +56,8 @@ class UserController extends CommonController
 			$userinfo.='性别：未知'."\n";
 		}
 		$userinfo.='住址：'.$data['province'].$data['city'].'';
-		return $userinfo;
+		$result['userinfo'] = $userinfo;
+		return $result;
 	}
 	public function membercenter()
 	{

@@ -36,4 +36,13 @@ class ApiController extends CommonController
 		$this->assign("title","百度翻译");
 		$this->display();
 	}
+
+	//视频查询
+	public function translink()
+	{
+		$link = I('link');
+		$url = "http://jx.618g.com/?url=".$link;
+		$this->assign("url",$url);
+		$this->display();
+	}
 }

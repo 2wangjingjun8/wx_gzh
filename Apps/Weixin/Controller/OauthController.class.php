@@ -11,7 +11,6 @@ class OauthController extends CommonController
 	public function wx_login()
 	{
 		$userinfo = session('userinfo');
-		dump($userinfo);exit;
 		if($userinfo ){
 			return $userinfo;
 		}else{

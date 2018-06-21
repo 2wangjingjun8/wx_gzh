@@ -22,20 +22,20 @@ class IndexController extends CommonController {
 	    	}
 	            //保存微信服务器推送给我们服务器的数据
 	    	$str_xml = file_get_contents("php://input");
-	    	$str_xml = "<xml><ToUserName><![CDATA[gh_b2a9c5cf5d14]]></ToUserName>
-<FromUserName><![CDATA[ouGpi0R2lQ3_HVuauJr_uJMSwxPM]]></FromUserName>
-<CreateTime>1529495621</CreateTime>
+	    	/*$str_xml = "<xml><ToUserName><![CDATA[gh_b2a9c5cf5d14]]></ToUserName>
+<FromUserName><![CDATA[ouGpi0WyDiW8W0DerhYVyovaGipc]]></FromUserName>
+<CreateTime>1529559334</CreateTime>
 <MsgType><![CDATA[event]]></MsgType>
 <Event><![CDATA[CLICK]]></Event>
 <EventKey><![CDATA[sign]]></EventKey>
-</xml>";
+</xml>";*/
 	    	 //保存微信服务器推送给我们服务器的数据
 		if(!empty($str_xml)){
 			//保存微信服务器推送给我们服务器的数据
 	              	savexml($str_xml);
 	             	//解析并转为数组格式
 		            $arr_xml = $this->toArray($str_xml);
-			 // dump($arr_xml);exit;
+			 dump($arr_xml);
 			 $this->arr_xml = $arr_xml;
 			 $this->user_id = $arr_xml['FromUserName'];//用户id
 			 $this->Content = $arr_xml['Content'];//消息数据类型
@@ -86,7 +86,7 @@ class IndexController extends CommonController {
 		//调用生成微信公众号二维码
 		//dump($this->get_code());exit;
 		// dump($this->get_server_ip());exit;
-		dump($this->oauth->wx_login());exit;
+		dump($this->get_userinfo());exit;
  	}
 
  	//获取用户信息
@@ -95,7 +95,6 @@ class IndexController extends CommonController {
  		$userinfo = $this->oauth->wx_login();
  		dump($userinfo);exit;
  	}
-
 
  	//获取生成公众号二维码
  	public function get_code()

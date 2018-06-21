@@ -32,21 +32,19 @@ class MessageController extends CommonController
 	//回复文本消息
  	public function reply_text($msg)
  	{
-
 		$reply_xml = "<xml><ToUserName><![CDATA[%s]]></ToUserName>
 			<FromUserName><![CDATA[%s]]></FromUserName>
 			<CreateTime>%d</CreateTime>
 			<MsgType><![CDATA[text]]></MsgType>
 			<Content><![CDATA[%s]]></Content>
 			</xml>";
-
-		$arr = explode('：', $msg);
-		if(count($arr) > 1){
-			if($arr[0] == '天气'){
-				$city = $arr[1];
-				$reply_weather = $this->api->get_weather($city);
-				// dump($rs);exit;
-			}else{
+		$str = mb_substr($msg,-2,-1,'utf-8');
+		// dump($str);exit;
+		if($str =="天"){
+			$city = mb_substr($msg,0,-2,'utf-8');
+			$reply_weather = $this->api->get_weather($city);
+			// dump($reply_weather);exit;
+			if($reply_weather ==''){
 				$reply_weather = '无效的城市名';
 			}
 			//消息回复处理方法

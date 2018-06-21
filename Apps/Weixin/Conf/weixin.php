@@ -16,9 +16,14 @@ return array(
 							"key":"weather"
 						},
 						{
-							"type":"click",
+							"type":"view",
 							"name":"公交查询",
-							"key":"公交"
+							"url":"http://map.baidu.com/mobile/webapp/index/index/"
+						},
+						{
+							"type":"view",
+							"name":"VIP视频转链",
+							"url":"http://www.ice20.top/weixin2/Wechat.php/Api/translink"
 						},
 						{
 							"type":"click",
@@ -61,9 +66,9 @@ return array(
 							"url":"http://www.ice20.top/weixin2/user/membercenter"
 						},
 						{
-							"type":"view",
+							"type":"click",
 							"name":"会员信息",
-							"url":"http://www.ice20.top/weixin2/index/get_userinfo"
+							"key":"userinfo"
 						},
 						{
 							"type":"click",
