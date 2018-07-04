@@ -8,6 +8,8 @@ class IndexController extends CommonController {
 	{
 		$this->assign("title","首页");
 		$this->display();
+
+		
 	}
 
  	//获取生成公众号二维码

@@ -24,10 +24,11 @@
 		<ul id="carUl">
 			<volist name='cartlist' id='v'>
 				<li data-id="5" class="number">
-					<label for="data_1" class="checkone"><input type="checkbox" id="data_1" class="checked">
+					<label for="data_" class="checkone"><input type="checkbox" id="data_" class="checked">
 					</label>
 					<a href="{:U('product/pro_details',array('id'=>$v['id']))}">
-						<img src="http://www.ice20.top/weixin2/{$v.pro_photo}" alt="img" style="width:56px;height:56px;"></a>
+						<img src="http://www.ice20.top/weixin2/{$v.pro_photo}" alt="img" style="width:56px;height:56px;">
+					</a>
 					<div>
 						<h2><a href="{:U('product/pro_details',array('id'=>$v['id']))}">{$v.pro_name}</a></h2>
 						<p><span>输入灵敏度：</span><em>520mV/47KΩ(低增益)</em></p>
@@ -37,14 +38,17 @@
 					</div>
 					<div>
 						<b onclick="" data="删除购物车"></b>
-						<span>原价:¥{$v.market_price}</span><i>现价:</i><em>¥</em><em class="price">{$v.shop_price}</em>
+						<span>原价:¥{$v.market_price}</span>
+						<i>现价:</i>
+						<em>¥</em>
+						<em class="price">{$v.shop_price}</em>
 					</div>
 				</li>
 			</volist>
 		</ul>
 		<div>
 				<label for="all"><input type="checkbox" id="all"><label for="all" id="checkall"></label><span>全选</span></label>
-				<span>总价：<em>¥</em><em id="sum">230</em></span>
+				<span>总价：<em>¥</em><em id="sum">0.00</em></span>
 				<a href="javascript:void(0);" >去结算</a>
 		</div>
 		</section>
@@ -53,9 +57,14 @@
 	<!--中间内容部分 end-->
 	<script>
 	$(document).ready(function(){
+		var total_price = 0.00;
 		//减
 		$(".reduce").on("click",function(){
 			var num = $(this).next().val();
+			if($(this).next().val() <= 1){
+				alert('数量至少为1件');
+				return false;
+			}
 			num--;
 			$(this).next().val(num);
 
@@ -65,10 +74,23 @@
 					alert(res.errmsg);
 				}
 			})
+
+			//总价加起来
+			total_price = 0.00;
+			$.each($('.price'),function(k,v){
+				var num = $('.price').eq(k).parent().prev().find('.num').val();
+				total_price += Number($('.price').html())  * Number(num);
+			})
+			$('#sum').html(total_price.toFixed(2));
 		})
 		//加
 		$(".add").on("click",function(){
 			var num = $(this).prev().val();
+			/*//检查库存，比较是否库存够
+			if($(this).prev().val() < 1){
+				alert('数量至少为1件');
+				return false;
+			}*/
 			num++;
 			$(this).prev().val(num);
 
@@ -78,31 +100,49 @@
 					alert(res.errmsg);
 				}
 			})
+
+			//总价加起来
+			total_price = 0.00;
+			$.each($('.price'),function(k,v){
+				var num = $('.price').eq(k).parent().prev().find('.num').val();
+				total_price += Number($('.price').html())  * Number(num);
+			})
+			$('#sum').html(total_price.toFixed(2));
 		})
 
 
 		//点击单个选项
-		$('.checkone').click.each(function(k,v){
-			if($('.checkone').eq(k).hasClass('on')){
-				$('.checkone').eq(k).removeClass('on');
+		$('.checkone').click(function(){
+			// alert(2122)
+			if($(this).hasClass('on')){
+				$(this).removeClass('on');
 			}else{
-				$('.checkone').eq(k).addClass('on');
+				$(this).addClass('on');
 			}
 		})
 		//点击全选按钮的时候
 		$('#checkall').click(function(){
 			var checkon = $(this).parent().parent().parent().find('.number label').hasClass('on');
+			
 			// alert(checkon)
 			if(checkon){
+				total_price = 0.00;
 				$(this).removeClass('on');
 				$(this).parent().parent().parent().find('.number label').removeClass('on');
 				$(this).parent().parent().parent().find('.number label .checked').attr('checked',false);
+				$('#sum').html(0);
 			}else{
 				$(this).addClass('on');
 				$(this).parent().parent().parent().find('.number label').addClass('on');
 				$(this).parent().parent().parent().find('.number label .checked').attr('checked',true);
+
 				//总价加起来
-				var totalprice = '';
+				total_price = 0.00;
+				$.each($('.price'),function(k,v){
+					var num = $('.price').eq(k).parent().prev().find('.num').val();
+					total_price += Number($('.price').html())  * Number(num);
+				})
+				$('#sum').html(total_price.toFixed(2));
 			}
 			
 		})

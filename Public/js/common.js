@@ -20,12 +20,12 @@ $(function(){
 
 	//移动窗口就刷新页面
 
-	$(window).resize(function(){
+	/*$(window).resize(function(){
 
 		location.reload();//刷新页面
 
 	})
-
+*/
 	/*banner图片*/
 
 	var liLen=$(".banList ul li").length;//获取li个数
